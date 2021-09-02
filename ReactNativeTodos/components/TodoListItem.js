@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View, 
   Text, 
@@ -8,9 +8,7 @@ import {
 
 import Icon from 'react-native-vector-icons/AntDesign';
 
-// const [todos, setTodos] = useState([]);
-
-const TodoListItem = () => {
+const TodoListItem = ({ id, textValue, checked }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -19,7 +17,7 @@ const TodoListItem = () => {
         </View>
       </TouchableOpacity>
       <Text style={[styles.text, styles.strikeText]}>
-        Items will be shown here
+        {textValue}
       </Text>
       <TouchableOpacity style={styles.buttonContainer}>
         <Text style={styles.buttonText}>
