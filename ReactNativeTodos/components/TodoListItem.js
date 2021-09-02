@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View, 
   Text, 
@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+
+// const [todos, setTodos] = useState([]);
 
 const TodoListItem = () => {
   return (
