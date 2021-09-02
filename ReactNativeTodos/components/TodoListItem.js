@@ -8,7 +8,7 @@ import {
 
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const TodoListItem = ({ id, textValue, checked }) => {
+const TodoListItem = ({id, textValue, checked, onRemove}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -20,7 +20,7 @@ const TodoListItem = ({ id, textValue, checked }) => {
         {textValue}
       </Text>
       <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>
+        <Text style={styles.buttonText} onPress={onRemove(id)}>
           <Icon name="delete" size={30} color='#e33057' />
         </Text>
       </TouchableOpacity>

@@ -12,13 +12,24 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
 const App = () => {
+  // todoLists UseState
   const [todos, setTodos] = useState([]);
 
+  // todoLists를 최신화하는 함수
   const addTodo = text => {
     setTodos([
       ...todos, 
-      {id: Math.random().toString(), textValue: text, checked: false}, 
+      {
+        id: Math.random().toString(), 
+        textValue: text, 
+        checked: false
+      }, 
     ]);
+  };
+
+  // TodoList를 삭제하는 함수
+  const onRemove = id => e => {
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
@@ -26,7 +37,7 @@ const App = () => {
       <Text style={styles.appTitle}>Hello Todolist</Text>
       <View style={styles.card}>
         <TodoInsert onAddTodo={addTodo} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemove={onRemove} />
       </View>
     </SafeAreaView>
   );
