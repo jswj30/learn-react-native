@@ -7,11 +7,16 @@ import {
 
 import TodoListItem from './TodoListItem';
 
-const TodoList = ({todos, onRemove}) => {
+const TodoList = ({todos, onRemove, onToggle}) => {
   return (
     <ScrollView contentContainerStyle={styles.listContainer}>
       {todos.map(todo => (
-        <TodoListItem key={todo.id} {...todo} onRemove={onRemove} />
+        <TodoListItem 
+          key={todo.id} 
+          {...todo} 
+          onRemove={onRemove} 
+          onToggle={onToggle}
+        />
       ))}
     </ScrollView>
   );

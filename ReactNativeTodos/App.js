@@ -32,12 +32,21 @@ const App = () => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  // 완료 체크하는 함수
+  const onToggle = id => e => {
+    setTodos(
+      todos.map(todo => 
+        todo.id === id ? {...todo, checked: !todo.checked} : todo 
+      )
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.appTitle}>Hello Todolist</Text>
       <View style={styles.card}>
         <TodoInsert onAddTodo={addTodo} />
-        <TodoList todos={todos} onRemove={onRemove} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </View>
     </SafeAreaView>
   );
