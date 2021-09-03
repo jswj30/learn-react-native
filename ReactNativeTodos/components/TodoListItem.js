@@ -24,7 +24,7 @@ const TodoListItem = ({id, textValue, checked, onRemove, onToggle}) => {
         {textValue}
       </Text>
       <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.buttonText} onPress={onRemove(id)}>
+        <Text style={styles.buttonText} onPress={() => onRemove(id)}>
           <Icon name="delete" size={30} color='#e33057' />
         </Text>
       </TouchableOpacity>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between', 
   }, 
   circle: {
-    width: 30, 
+    width: "30rem", 
     height: 30, 
     borderRadius: 15, 
     borderColor: 'blue', 
