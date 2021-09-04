@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,12 +18,12 @@ const App = () => {
   // todoLists를 최신화하는 함수
   const addTodo = text => {
     setTodos([
-      ...todos, 
+      ...todos,
       {
-        id: Math.random().toString(), 
-        textValue: text, 
-        checked: false
-      }, 
+        id: Math.random().toString(),
+        textValue: text,
+        checked: false,
+      },
     ]);
   };
 
@@ -35,9 +35,9 @@ const App = () => {
   // 완료 체크하는 함수
   const onToggle = id => e => {
     setTodos(
-      todos.map(todo => 
-        todo.id === id ? {...todo, checked: !todo.checked} : todo 
-      )
+      todos.map(todo =>
+        todo.id === id ? {...todo, checked: !todo.checked} : todo,
+      ),
     );
   };
 
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
     flex: 1,
-    borderTopLeftRadius: 10, // to provide rounded corners
+    borderTopLeftRadius: 11, // to provide rounded corners
     borderTopRightRadius: 10, // to provide rounded corners
     marginLeft: 10,
     marginRight: 10,
