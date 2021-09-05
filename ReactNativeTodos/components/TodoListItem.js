@@ -23,7 +23,9 @@ const TodoListItem = ({id, textValue, checked, onRemove, onToggle}) => {
         {textValue}
       </Text>
       <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.buttonText} onPress={() => onRemove(id)}>
+        {/* 이건 왜 안되지??? */}
+        {/* <Text style={styles.buttonText} onPress={() => onRemove(id)}> */}
+        <Text style={styles.buttonText} onPress={onRemove(id)}>
           <Icon name="delete" size={30} color="#e33057" />
         </Text>
       </TouchableOpacity>
