@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
 class Home extends Component {
   render() {
@@ -30,6 +32,23 @@ class Settings extends Component {
     );
   }
 }
+
+const App = createStackNavigator(
+  {
+    Chat: {
+      screen: Chat,
+    },
+    Home: {
+      screen: Home,
+    },
+    Settings,
+  },
+  {
+    initialRouteName: 'Home',
+  },
+);
+
+const AppContainer = createAppContainger;
 
 export default () => (
   <View style={styles.centerView}>
