@@ -21,12 +21,24 @@ const App = () => {
     ]);
   };
 
+  const onRemove = id => e => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const onToggle = id => e => {
+    setTodos(
+      todos.map(todo => 
+        todo.id === id ? {...todo, checked: !todo.checked} : todo, 
+      )
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.appTitle}>Hello Todolist</Text>
       <View style={styles.card}>
         <TodoInsert onAddTodo={addTodo} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </View>
     </SafeAreaView>
   );
