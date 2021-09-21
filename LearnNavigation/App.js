@@ -13,14 +13,22 @@ const HomeScreen = () => {
 
 const Stack = createNativeStackNavigator();
 
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen name="Home" component={HomeScreen} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   )
+// }
+
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
-}
+    return (
+      <View>
+        <Text>test</Text>
+      </View>
+    )
+  }
 
 export default App;
