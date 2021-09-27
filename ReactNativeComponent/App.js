@@ -1,20 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const test = () => {
+    alert('test');
+  }
   return (
     <View
       style={{
         flex: 1, 
+        backgroundColor: '#fff', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        backgroundColor: '#fff', 
       }}
     >
-      <Text>Open up App.js. js to start working on your app!</Text>
+      <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
+        <Button title="Press Here" style={styles.button} onPress={() => alert('test')} />
+      {/* <TouchableOpacity
+        style={styles.button}
+        onPress={test}
+      >
+        <Text>Press Here</Text>
+      </TouchableOpacity> */}
     </View>
-  );
+  )
 }
+
+export default App;
+
+// export default function App() {
+//   return (
+//     <View
+//       style={{
+//         flex: 1, 
+//         justifyContent: 'center', 
+//         alignItems: 'center', 
+//         backgroundColor: '#fff', 
+//       }}
+//     >
+//       <Text>Open up App.js. js to start working on your app!</Text>
+//     </View>
+//   );
+// }
 
 // export default function App() {
 //   // return null;
@@ -58,4 +85,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30, 
   }, 
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10
+  }
 });
