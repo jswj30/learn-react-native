@@ -1,29 +1,58 @@
 // 함수형
 import React, { useState, useEffect } from 'react';
 // Animated 모듈 가져오기
-import { StyleSheet, View, Animated, Text } from 'react-native';
+import { StyleSheet, View, Animated, Text, TouchableOpacity } from 'react-native';
 
 const App = () => {
   const [animation, setAnimation] = useState(new Animated.Value(0));
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   Animated.timing(
+  //     animation, 
+  //     {
+  //       toValue: 0, 
+  //       duration: 2000, 
+  //       useNativeDriver: true, 
+  //     }
+  //   ).start();
+  // }, []);
+
+  const onPressButton = () => {
+    console.log(animation);
     Animated.timing(
       animation, 
       {
         toValue: 1, 
         duration: 2000, 
+        useNativeDriver: true, 
       }
     ).start();
-  }, []);
+    setTimeout(() => {
+      Animated.timing(
+        animation, 
+        {
+          toValue: 0, 
+          duration: 2000, 
+          useNativeDriver: true, 
+        }
+      ).start();
+    }, 3000);
+
+  }
 
   const animationStyles = {
     opacity: animation, 
   }
 
   return (
-    <Animated.View style={[styles.object, animationStyles]}>
-      <Text>테스트</Text>
-    </Animated.View>
+    <View>
+      <TouchableOpacity onPress={onPressButton}>
+        <Text>테스트</Text>
+      </TouchableOpacity>
+      <Animated.View style={[styles.object, animationStyles]}>
+      </Animated.View>
+    </View>
+      
   )
 }
 
