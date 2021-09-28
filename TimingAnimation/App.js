@@ -1,3 +1,4 @@
+// 함수형
 import React, { useState, useEffect } from 'react';
 // Animated 모듈 가져오기
 import { StyleSheet, View, Animated, Text } from 'react-native';
@@ -40,7 +41,7 @@ export default App;
 
 
 
-
+// class형
 // import React, { Component } from 'react';
 // // Animated 모듈 가져오기
 // import { View, Animated } from 'react-native';
