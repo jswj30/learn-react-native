@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Linking from 'expo-linking';
+import Linking, { getInitialURL } from 'expo-linking';
 
 import HomeScreen from './components/HomeScreen';
 import DetailsScreen from './components/DetailsScreen';
@@ -17,6 +17,55 @@ const App = () => {
   // const linking = {
   //   prefixes: [prefix], 
   // }
+
+  // Third-party integrations
+  // const linking = {
+  //   prefixed: ['myapp://', 'https://myapp.com'],
+    
+  //   async getInitialURL() {
+  //     const url = await Linking.getInitialURL();
+  //     if (url != null) {
+  //       return url;
+  //     }
+  //     const params = branch.getFirstReferringParams();
+  //     return params?.$canonical_url;
+  //   }, 
+
+  //   subscribe(listener) {
+  //     const onReceiveURL = ({ url }: { url: string }) => listener(url);
+  
+  //     Linking.addEventListener('url', onReceiveURL);
+  
+  //     branch.subscribe(({ error, params, uri }) => {
+  //       if (error) {
+  //         console.error('Error from Branch: ' + error);
+  //         return;
+  //       }
+  
+  //       if (params['+non_branch_link']) {
+  //         const nonBranchUrl = params['+non_branch_link'];
+  //         return;
+  //       }
+  
+  //       if (!params['+clicked_branch_link']) {
+  //         return;
+  //       }
+  
+  //       const url = params.$canonical_url;
+  
+  //       listener(url);
+  //     });
+
+  //     return () => {
+  //       Linking.removeEventListener('url', onReceiveURL);
+  //       branch.unsubscribe();
+  //     };
+  //   }, 
+  
+  //   config: {
+
+  //   }
+  // };
 
   const Stack = createNativeStackNavigator();
 
