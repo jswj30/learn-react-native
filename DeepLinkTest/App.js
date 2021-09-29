@@ -2,18 +2,19 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Linking, { getInitialURL } from 'expo-linking';
+// expo-------------------------------------------------------------------------
+// import Linking, { getInitialURL } from 'expo-linking';
 
 import HomeScreen from './components/HomeScreen';
 import DetailsScreen from './components/DetailsScreen';
 import BackScreen from './components/BackScreen';
 
-// expo
+// expo-------------------------------------------------------------------------
 // const prefix = Linking.createURL('/');
 
 const App = () => {
 
-  // expo
+  // expo-------------------------------------------------------------------------
   // const linking = {
   //   prefixes: [prefix], 
   // }
@@ -70,7 +71,7 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return(
-    // expo
+    // expo-------------------------------------------------------------------------
     // <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
     <NavigationContainer>
       <Stack.Navigator 

@@ -1,11 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Dimensions, TouchableOpacity, Button } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-const HomeScreen = ({ navigation }) => {
+import OpenURLButton from './OpenURLButton';
+import OpenSettingsButton from './OpenSettingsButton';
 
-  const [value, setValue] = useState("");
+const supportedURL = "https://google.com";
+
+const unsupportedURL = "slack://open?team=123456";
+
+
+const HomeScreen = ({ navigation }) => {
 
   const handleDeepLink = () => {
     alert('DeepLink');
@@ -18,17 +24,27 @@ const HomeScreen = ({ navigation }) => {
   return (
 
     <View style={styles.container}>
+
       <Text style={styles.text}>DeepLink Test</Text>
+      
       <TouchableOpacity onPress={handleDeepLink}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>딥링크</Text>
         </View>
       </TouchableOpacity>
+
       <TouchableOpacity onPress={handleDetails}>
         <View style={styles.button}>
         <Text style={styles.buttonText}>Detail</Text>
         </View>
       </TouchableOpacity>
+
+      <OpenURLButton url={supportedURL}>Open supported URL</OpenURLButton>
+
+      <OpenURLButton url={unsupportedURL}>Open unsupported</OpenURLButton>
+
+      <OpenSettingsButton>Open Setting</OpenSettingsButton>
+
     </View>
 
   )
@@ -61,6 +77,7 @@ const styles = EStyleSheet.create({
     marginLeft: 'auto', 
     marginRight: 'auto', 
     paddingTop: '10rem', 
+    textAlign : 'center', 
   }
 })
 
