@@ -1,6 +1,11 @@
-import React, { useState, useEffect, useFocusEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
+import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
+import HomeScreen from './components/HomeScreen';
+import DetailsScreen from './components/DetailsScreen';
 
 const App = () => {
   const [value, setValue] = useState("");
@@ -9,15 +14,26 @@ const App = () => {
     alert('DeepLink');
   }
 
+  const Stack = createNativeStackNavigator();
+
   return(
-    <View style={styles.container}>
-      <Text style={styles.text}>DeepLink Test</Text>
-      <TouchableOpacity onPress={handleDeepLink}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>딥링크</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+    // <NavigationContainer>
+    //   <View style={styles.container}>
+    //     <Text style={styles.text}>DeepLink Test</Text>
+    //     <TouchableOpacity onPress={handleDeepLink}>
+    //       <View style={styles.button}>
+    //         <Text style={styles.buttonText}>딥링크</Text>
+    //       </View>
+    //     </TouchableOpacity>
+    //   </View>
+    // </NavigationContainer>
   )
 }
 
