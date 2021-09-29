@@ -2,37 +2,27 @@ import React from 'react';
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import BackScreen from './BackScreen';
-
-const DetailsScreen = ({ navigation }) => {
-  const handleDetails = () => {
-    navigation.navigate('Home');
-  }
-
-  const handleBackSceen = () => {
-    navigation.navigate('Back');
-  }
+const BackScreen = ({ navigation }) => {
 
   const handleBack = () => {
     navigation.goBack();
   }
 
+  const handleHome = () => {
+    navigation.popToTop();
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Details Screen</Text>
-      <TouchableOpacity onPress={handleDetails}>
-        <View style={styles.button}>
-        <Text style={styles.buttonText}>Home</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleBackSceen}>
-        <View style={styles.button}>
-        <Text style={styles.buttonText}>BackScreen</Text>
-        </View>
-      </TouchableOpacity>
+      <Text style={styles.text}>Back Screen</Text>
       <TouchableOpacity onPress={handleBack}>
         <View style={styles.button}>
         <Text style={styles.buttonText}>Back</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleHome}>
+        <View style={styles.button}>
+        <Text style={styles.buttonText}>Home</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -68,4 +58,4 @@ const styles = EStyleSheet.create({
   }
 })
 
-export default DetailsScreen;
+export default BackScreen;
