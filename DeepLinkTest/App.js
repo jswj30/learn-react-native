@@ -8,9 +8,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './components/HomeScreen';
 import DetailsScreen from './components/DetailsScreen';
 import BackScreen from './components/BackScreen';
+import DeeplinkScreen from './components/DeeplinkScreen';
 
 // expo-------------------------------------------------------------------------
 // const prefix = Linking.createURL('/');
+
+const linking = {
+  prefixes: [
+
+  ], 
+  config: {
+
+  }, 
+};
 
 const App = () => {
 
@@ -73,10 +83,12 @@ const App = () => {
   return(
     // expo-------------------------------------------------------------------------
     // <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
-    <NavigationContainer>
+    // <NavigationContainer>
+    <NavigationContainer linking={linking} fallback={<Text>Loadeng...</Text>}>
       <Stack.Navigator 
         initialRouteName="Home"
       >
+        <Stack.Screen name="Deeplink" component={DeeplinkScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Back" component={BackScreen} />

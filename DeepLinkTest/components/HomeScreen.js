@@ -12,9 +12,10 @@ const unsupportedURL = "slack://open?team=123456";
 
 
 const HomeScreen = ({ navigation }) => {
+  
 
   const handleDeepLink = () => {
-    alert('DeepLink');
+    navigation.navigate('Deeplink');
   }
 
   const handleDetails = () => {
@@ -29,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
       
       <TouchableOpacity onPress={handleDeepLink}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>딥링크</Text>
+          <Text style={styles.buttonText}>딥링크받기</Text>
         </View>
       </TouchableOpacity>
 
