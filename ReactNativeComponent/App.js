@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import MyButton from './components/MyButton';
 
 const App = () => {
   const test = () => {
@@ -15,7 +16,12 @@ const App = () => {
       }}
     >
       <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
-        <Button title="Press Here" style={styles.button} onPress={() => alert('test')} />
+        
+        <MyButton title="Button" />
+        <MyButton title="Button">Children Props</MyButton>
+
+        {/* <Button title="Press Here" style={styles.button} onPress={() => alert('test')} /> */}
+        
       {/* <TouchableOpacity
         style={styles.button}
         onPress={test}
