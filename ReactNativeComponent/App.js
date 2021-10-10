@@ -3,22 +3,24 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import MyButton from './components/MyButton';
 
 const App = () => {
-  const test = () => {
-    alert('test');
-  }
   return (
     <View
-      style={{
+    style={{
         flex: 1, 
         backgroundColor: '#fff', 
         justifyContent: 'center', 
         alignItems: 'center', 
       }}
-    >
+      >
       <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
         
-        <MyButton title="Button" />
-        <MyButton title="Button">Children Props</MyButton>
+      <MyButton title="Button" />
+      <MyButton title="Button">Children Props</MyButton>
+      <MyButton />
+
+      {/* const test = () => {
+        alert('test');
+      } */}
 
         {/* <Button title="Press Here" style={styles.button} onPress={() => alert('test')} /> */}
         

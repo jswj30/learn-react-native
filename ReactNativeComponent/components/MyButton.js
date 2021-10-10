@@ -17,4 +17,8 @@ const MyButton = (props) => {
   );
 };
 
+MyButton.defaultProps = {
+  title: 'Button', 
+}
+
 export default MyButton;
