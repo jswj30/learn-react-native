@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import propTypes from 'prop-types'; 
 
 const MyButton = (props) => {
   console.log(props);
@@ -20,5 +21,9 @@ const MyButton = (props) => {
 MyButton.defaultProps = {
   title: 'Button', 
 }
+
+MyButton.propTypes = {
+  title: propTypes.number, 
+};
 
 export default MyButton;
