@@ -23,7 +23,7 @@ MyButton.defaultProps = {
 }
 
 MyButton.propTypes = {
-  title: PropTypes.number.isRequired, 
+  title: PropTypes.string.isRequired, 
   name: PropTypes.string.isRequired, 
   onPress: PropTypes.func.isRequired, 
 };

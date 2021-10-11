@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import MyButton from './components/MyButton';
+import Counter from './components/Counter';
 
 const App = () => {
   return (
@@ -12,12 +13,15 @@ const App = () => {
         alignItems: 'center', 
       }}
     >
-      <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
+
+      <Counter />
+
+      {/* <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
         
       <MyButton title="Button" onPress={() => alert('props')} />
       <MyButton title="Button" onPress={() => alert('children')}>Children Props</MyButton>
-      <MyButton onPress={() => alert('default')} />
-      
+      <MyButton onPress={() => alert('default')} /> */}
+
       {/* <MyButton title="Button" />
       <MyButton title="Button">Children Props</MyButton>
       <MyButton /> */}
