@@ -5,18 +5,22 @@ import MyButton from './components/MyButton';
 const App = () => {
   return (
     <View
-    style={{
+      style={{
         flex: 1, 
         backgroundColor: '#fff', 
         justifyContent: 'center', 
         alignItems: 'center', 
       }}
-      >
+    >
       <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
         
-      <MyButton title="Button" />
+      <MyButton title="Button" onPress={() => alert('props')} />
+      <MyButton title="Button" onPress={() => alert('children')}>Children Props</MyButton>
+      <MyButton onPress={() => alert('default')} />
+      
+      {/* <MyButton title="Button" />
       <MyButton title="Button">Children Props</MyButton>
-      <MyButton />
+      <MyButton /> */}
 
       {/* const test = () => {
         alert('test');
