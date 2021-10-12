@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import MyButton from './components/MyButton';
 import Counter from './components/Counter';
+import EventButton from './components/EventButton';
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
       }}
     >
 
-      <Counter />
+      <EventButton />
+
+      {/* <Counter /> */}
 
       {/* <Text style={{ fontSize: 30, marginBottom: 10 }}>Button Component</Text>
         
