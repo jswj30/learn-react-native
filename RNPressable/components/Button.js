@@ -13,7 +13,7 @@ const Button = (props) => {
       pressRetentionOffset={{ bottom: 50, left: 50, right: 50, top: 50 }}
       hitSlop={50}
     >
-      <Text style={{padding: 10, fontSize: 30, textAlign: 'center', }}>{props.title}</Text>
+      <Text style={{padding: 10, fontSize: 30, textAlign: 'center'}}>{props.title}</Text>
     </Pressable>
   );
 };
