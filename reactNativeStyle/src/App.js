@@ -4,8 +4,8 @@ import { StyleSheet, View, Text } from 'react-native';
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>React Native Style</Text>
-      <Text style={styles.error}>Inline Styling - Error</Text>
+      <Text style={[styles.text, { color: 'green' }]}>React Native Style</Text>
+      <Text style={[styles.text, styles.error]}>Inline Styling - Error</Text>
     </View>
 
 
@@ -53,12 +53,16 @@ const styles = StyleSheet.create({
     fontWeight: '600', 
     color: 'black', 
   }, 
+  // error: {
+  //   padding: 10, 
+  //   fontSize: 26, 
+  //   fontWeight: '400', 
+  //   color: 'red', 
+  // },
   error: {
-    padding: 10, 
-    fontSize: 26, 
     fontWeight: '400', 
     color: 'red', 
-  }
+  },  
 })
 
 export default App;
