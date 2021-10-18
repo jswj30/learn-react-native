@@ -1,13 +1,21 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
+import { Header, Contents, Footer } from '../components/Layout';
 
 const App = () => {
   return (
     <View style={viewStyles.container}>
-      <Text style={[textStyles.text, { color: 'green' }]}>React Native Style</Text>
-      <Text style={[textStyles.text, textStyles.error]}>Inline Styling - Error</Text>
+      <Header />
+      <Contents />
+      <Footer />
     </View>
+
+
+    // <View style={viewStyles.container}>
+    //   <Text style={[textStyles.text, { color: 'green' }]}>React Native Style</Text>
+    //   <Text style={[textStyles.text, textStyles.error]}>Inline Styling - Error</Text>
+    // </View>
 
 
     // <View style={styles.container}>
