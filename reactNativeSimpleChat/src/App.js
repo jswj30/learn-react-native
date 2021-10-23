@@ -1,5 +1,5 @@
-import React from 'react';
-import { StatusBar } from 'react-native';
+import React, { useState } from 'react';
+import { StatusBar, Image } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './theme';
 import { View, Text } from 'react-native';
