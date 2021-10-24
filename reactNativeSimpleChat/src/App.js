@@ -6,9 +6,14 @@ import { View, Text } from 'react-native';
 
 const App = () => {
   return (
+    <>
     <ThemeProvider theme={theme}>
       <StatusBar barStyle="dark-content" />
     </ThemeProvider>
+    <View>
+      <Text>test</Text>
+    </View>
+    </>
   );
 };
 
